@@ -1,4 +1,4 @@
-# 🧩 Clusterização de Clientes por Comportamento de Compra
+# Clusterização de Clientes por Comportamento de Compra
 
 Aplicação de Machine Learning para segmentação de clientes utilizando o algoritmo **K-Means**, desenvolvida com Streamlit.
 
@@ -67,7 +67,7 @@ python -m streamlit run app.py
 streamlit run app.py
 ```
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 ├── app.py                 # Aplicação Streamlit

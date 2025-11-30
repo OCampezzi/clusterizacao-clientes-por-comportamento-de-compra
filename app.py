@@ -24,7 +24,7 @@ df, perfil_clusters, modelo_kmeans, scaler = carregar_recursos()
 
 COLUNAS = ["Fresh", "Milk", "Grocery", "Frozen", "Detergents_Paper", "Delicassen"]
 
-st.title("🧩 Agrupamento de Clientes por Comportamento de Compra")
+st.title("Agrupamento de Clientes por Comportamento de Compra")
 st.markdown("""
 Aplicação para analisar padrões de compra e segmentar clientes de acordo com seu perfil de consumo anual.
 Modelo utilizado: **K-Means**.
@@ -91,19 +91,6 @@ with abas[2]:
     st.markdown("""
 O método do cotovelo mostra a inércia para cada valor de K. Escolhemos o ponto onde a curva
 começa a "achatar" - nesse caso, K=4 pareceu ser um bom valor.
-""")
-
-    st.divider()
-    st.subheader("Sobre o K-Means")
-    st.markdown("""
-O K-Means é um algoritmo de clusterização não supervisionado. Ele funciona assim:
-
-1. Escolhe K pontos iniciais (centróides)
-2. Atribui cada dado ao centróide mais próximo
-3. Recalcula os centróides baseado na média do grupo
-4. Repete até estabilizar
-
-É um algoritmo simples e rápido, mas precisa que a gente defina o K antes e pode ser afetado por outliers.
 """)
 
 with abas[3]:

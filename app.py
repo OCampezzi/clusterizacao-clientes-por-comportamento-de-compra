@@ -45,14 +45,17 @@ with abas[0]:
         "cluster": df["cluster"].astype(str)
     })
 
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(6, 4))
     for c in sorted(df_plot["cluster"].unique()):
         grupo = df_plot[df_plot["cluster"] == c]
         ax.scatter(grupo["PC1"], grupo["PC2"], label=f"Cluster {c}", alpha=0.7)
     ax.set_xlabel("PC1")
     ax.set_ylabel("PC2")
     ax.legend()
-    st.pyplot(fig)
+
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        st.pyplot(fig)
 
     st.markdown("### Amostra dos dados")
     st.dataframe(df[COLUNAS + ["cluster"]].head())
@@ -62,11 +65,25 @@ with abas[1]:
     st.dataframe(perfil_clusters.style.format("{:,.0f}"))
 
     st.markdown("""
-### Interpretações
-- Gastos altos em Grocery e Detergents_Paper: perfil de supermercados
-- Foco em Fresh e Frozen: restaurantes ou food service
-- Consumo reduzido e distribuído: varejistas menores
+### Interpretações dos Clusters
+
+- **Cluster 0: Pequenos estabelecimentos de alimentação**  
+  Consumo moderado em Fresh, Grocery e Frozen, com valores baixos em Detergents_Paper e Delicassen.  
+  Representa pequenos restaurantes, padarias, lanchonetes e negócios locais de alimentação.
+
+- **Cluster 1: Grandes consumidores/distribuidores**  
+  Maior volume geral entre os grupos, com Fresh, Milk e Detergents_Paper muito altos.  
+  Perfil característico de grandes redes varejistas, distribuidores ou supermercados de grande porte.
+
+- **Cluster 2: Varejo médio/grande com foco em Grocery e Frozen**  
+  Gastos extremamente altos em Grocery e Frozen, superiores aos demais clusters.  
+  Indica mercados médios/grandes ou estabelecimentos que demandam alto estoque.
+
+- **Cluster 3: Pequenos varejistas/clientes de baixo porte**  
+  Baixo consumo em todas as categorias, de forma relativamente uniforme.  
+  Representa pequenos mercados de bairro, mercearias locais ou clientes de menor escala.
 """)
+
 
 with abas[2]:
     st.subheader("Métricas de Desempenho")

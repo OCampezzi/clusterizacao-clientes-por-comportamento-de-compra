@@ -89,10 +89,21 @@ streamlit run app.py
 
 O modelo identificou 4 perfis distintos de clientes:
 
-- **Cluster 0**: Foco em Grocery e Detergents → Supermercados/Varejo
-- **Cluster 1**: Alto consumo geral → Grandes distribuidores
-- **Cluster 2**: Altíssimo Milk/Grocery → Redes de supermercados
-- **Cluster 3**: Foco em Fresh → Restaurantes/Food Service
+- **Cluster 0: Pequenos estabelecimentos de alimentação**  
+  Consumo moderado em Fresh, Grocery e Frozen, com valores baixos em Detergents_Paper e Delicassen.  
+  Representa pequenos restaurantes, padarias, lanchonetes e negócios locais de alimentação.
+
+- **Cluster 1: Grandes consumidores/distribuidores**  
+  Maior volume geral entre os grupos, com Fresh, Milk e Detergents_Paper muito altos.  
+  Perfil característico de grandes redes varejistas, distribuidores ou supermercados de grande porte.
+
+- **Cluster 2: Varejo médio/grande com foco em Grocery e Frozen**  
+  Gastos extremamente altos em Grocery e Frozen, superiores aos demais clusters.  
+  Indica mercados médios/grandes ou estabelecimentos que demandam alto estoque.
+
+- **Cluster 3: Pequenos varejistas/clientes de baixo porte**  
+  Baixo consumo em todas as categorias, de forma relativamente uniforme.  
+  Representa pequenos mercados de bairro, mercearias locais ou clientes de menor escala.
 
 ## Limitações
 
